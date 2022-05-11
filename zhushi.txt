@@ -15,7 +15,7 @@
 
         git checkout 文件名  撤回文件修改
         git rm -f 文件名  删除工作区和git仓库里的这一文件
-        git rm -cached 文件名  删除git仓库里的这一文件 回到未跟踪状态
+        git rm --cached 文件名  删除git仓库里的这一文件 回到未跟踪状态
 
         git log 打印先前每个版本的提交历史信息，里面有提交ID
         git reset --hard CommitID     跳转到对应CommitID的文件版本
