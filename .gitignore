@@ -3,7 +3,7 @@ index.css
 
 #忽视test文件夹下的所有文件
 test/
-
+# 忽视zhushi.txt
 zhushi.txt
 
 .gitignore

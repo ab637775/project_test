@@ -21,3 +21,13 @@
         git reset --hard CommitID     跳转到对应CommitID的文件版本
         git reflog --pretty=oneline   切换版本后使用这条命令才能查看所有的操作历史
         然后再次 git reset --hard CommitID 就可以回到最新版本
+
+
+        第一次向github提交git仓库文件夹有两种方式：https和ssh。
+        https方法需要使用以下代码：
+        git remote add origin https://github.com/ab637775/-.git
+        git branch -M main
+        git push -u origin main
+
+        后续修改了git仓库中的文件后，再次提交git文件夹只需要执行一条代码：
+        git push -u origin main
