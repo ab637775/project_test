@@ -31,3 +31,53 @@
 
         后续修改了git仓库中的文件后，再次提交git文件夹只需要执行一条代码：
         git push -u origin main
+
+        SSH方法：
+        1.生成SSH key
+        输入以下代码
+        ssh-keygen -t rsa -b 4096 -C"765830661@qq.com" （邮箱是个人邮箱）
+        连续敲击3次回车，即可在C:\Users\用户名文件夹\.ssh目录里生成id_rsa和id_rsa.pub两个文件
+        用记事本打开id_rsa.pub文件，全选并复制内容。
+        打开github网站并登录自己的账号，在setting处找到SSH and GPG key,生成SSH key
+        
+        2.检测Github的SSH key是否配置成功
+        输入以下代码
+        ssh -T git@github.com
+        看到相应提示信息后，输入yes继续
+        如果看到Hi username...等信息就证明配置成功
+
+        3.上传git文件夹
+        新建一个GitHub仓库后，选择SSH方式输入下列代码即可完成上传
+        git remote add origin https://github.com/ab637775/project_01.git
+        git branch -M main
+        git push -u origin main
+
+
+        克隆远程仓库地址
+        点击对应项目右边的绿色克隆按键，复制http或ssh的克隆代码，在gitbash中执行
+        git clone ...
+        即可
+
+        git branch 查看当前分支
+        git branch 分支名 创建新的分支
+        git checkout 分支名 跳转到目标分支
+
+        git checkout -b 分支名 快速创建新分支并跳转
+
+        git merge C分支的名称   如果想要把C分支合并到A分支，就需要在A分支上使用这条命令，就可以合并C分支到A分支上
+
+        git branch -d 分支名  这条命令用于删除分支。注意：删除目标分支时，当前分支不能处于该分支
+
+        上传分支到github上：
+        第一次上传需要执行下列命令
+        git push -u origin 分支名:上传保存的分支名
+        （冒号和后面的参数可以不加，也就是用原分支名来上传保存）
+        后续上传只要
+        git push 分支名 就行
+
+        git remote show origin 显示远程仓库的所有分支
+
+        git checkout 分支名 从远程仓库里下载分支
+        git checkout -b 新命名分支名 origin/远程仓库中的分支名  重新命名从远程仓库里下载的分支
+        git pull 下载最新的远程分支
+        git push origin --delete 分支名
